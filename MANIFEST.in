@@ -1,8 +1,0 @@
-recursive-include c_src *
-include simpleaudio/test_audio/c.wav
-include simpleaudio/test_audio/e.wav
-include simpleaudio/test_audio/g.wav
-include simpleaudio/test_audio/notes_2_16_44.wav
-include simpleaudio/test_audio/left_right.wav
-include LICENSE.txt
-include README.rst
