@@ -22,5 +22,5 @@ classifiers = ['License :: OSI Approved :: MIT License',
 Homepage='https://github.com/hamiltron/py-simple-audio'
 
 [tool.setuptools.package-data]
-"simpleaudio" = ["test_audio/*.wav"]
+"simpleaudio" = ["test_audio/?.wav","test_audio/notes_2_16_44.wav","test_audio/left_right.wav"]
 
