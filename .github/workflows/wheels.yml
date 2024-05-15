@@ -14,9 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install build tools on Ubuntu
-        if: runner.os == 'Linux'
-        run: sudo apt-get update && sudo apt-get install -y libasound2-dev
+      # - name: Install build tools on Ubuntu
+      #   if: runner.os == 'Linux'
+      #   run: sudo apt-get update && sudo apt-get install -y libasound2-dev
 
       # Used to host cibuildwheel
       - uses: actions/setup-python@v5
@@ -33,6 +33,7 @@ jobs:
           # Skip CPython 3.6 and CPython 3.7
           CIBW_SKIP: cp36-* cp37-*
           CIBW_BUILD_FRONTEND: "build"
+          CIBW_BEFORE_ALL_LINUX: yum install -y alsa-lib-devel
 
       - uses: actions/upload-artifact@v4
         with:
