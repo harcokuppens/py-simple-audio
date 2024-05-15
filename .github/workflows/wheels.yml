@@ -32,7 +32,7 @@ jobs:
         env:
           # Skip CPython 3.6 and CPython 3.7
           CIBW_SKIP: cp36-* cp37-*
-          CIBW_BUILD_FRONTEND: build
+          CIBW_BUILD_FRONTEND: "build"
 
       - uses: actions/upload-artifact@v4
         with:
