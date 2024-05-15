@@ -1,3 +1,11 @@
+This project is forked from https://github.com/cexen/py-simple-audio   which forked it from the original project at  https://github.com/hamiltron/py-simple-audio .
+Cexen applied a patch to make the library also work with python3.12. This
+repository is mainly used to build wheels for the patched simpleaudio so that we can easily
+install it for all python versions on all platforms. This project uses github
+actions workflow to build the wheels, and published them under the name
+"simpleaudio-patched" on pypi.
+
+
 NOTE: THIS PROJECT IS ARCHIVED
 ==============================
 

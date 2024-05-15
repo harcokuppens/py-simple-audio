@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 readme = "README.rst"
-name = "simpleaudio"
+name = "simpleaudio-patched"
 version = "1.0.5"
 authors = [{name = "Joe Hamilton", email = "jhamilton10@georgefox.edu"}, {name = "Harco Kuppens", email = "h.kuppens@cs.ru.nl"}]
 license = {file = "LICENSE.txt"}
@@ -19,7 +19,7 @@ classifiers = ['License :: OSI Approved :: MIT License',
              'Operating System :: MacOS :: MacOS X']
 
 [project.urls]
-Homepage='https://github.com/hamiltron/py-simple-audio'
+Homepage='https://github.com/harcokuppens/py-simple-audio'
 
 [tool.setuptools.package-data]
 "simpleaudio" = ["test_audio/?.wav","test_audio/notes_2_16_44.wav","test_audio/left_right.wav"]
