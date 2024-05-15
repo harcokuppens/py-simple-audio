@@ -84,3 +84,8 @@ jobs:
       with:
         name: wheels
         path: dist/*.whl
+
+    - uses: geekyeggo/delete-artifact@v5
+      with:
+          name: wheel-*
+    
