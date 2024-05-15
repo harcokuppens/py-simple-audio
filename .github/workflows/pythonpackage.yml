@@ -61,8 +61,18 @@ jobs:
     - name: Build the wheel
       run: python -m build --wheel
       
-    - name: Upload wheel
+    # - name: Upload wheel
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: wheel-${{ matrix.os }}-py${{ matrix.python-version }}
+    #     path: dist/*.whl
+
+  upload:
+    runs-on: ubuntu-latest   
+    
+    steps:     
+    - name: Upload wheels
       uses: actions/upload-artifact@v4
       with:
-        name: wheel-${{ matrix.os }}-py${{ matrix.python-version }}
+        name: wheels
         path: dist/*.whl
