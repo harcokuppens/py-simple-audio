@@ -22,9 +22,14 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
+
+    - name: Install build tools on macOS
+      if: runner.os == 'macOS'
+      run: |
+        sudo xcode-select --install || echo "Xcode Command Line Tools already installed"
 
     # - name: Install build tools on Ubuntu
     #   if: runner.os == 'Linux'
