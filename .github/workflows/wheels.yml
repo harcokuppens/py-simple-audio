@@ -9,7 +9,12 @@ jobs:
     strategy:
       matrix:
         #os: [ubuntu-latest]
-        os: [ubuntu-latest, windows-latest, macos-13, macos-14]
+        # manylinux wheel had problem with absolute path to alsa system, so better to build from source which always works
+        os: [windows-latest, macos-13, macos-14]
+        # macos-13: macos intel
+        # macos-14: macos M1
+        # see https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+        
 
     steps:
       - uses: actions/checkout@v4
@@ -26,6 +31,7 @@ jobs:
 
       - name: Build wheels
         run: python -m cibuildwheel --output-dir wheelhouse
+        # https://github.com/pypa/cibuildwheel
         # to supply options, put them in 'env', like:
         # env:
         #   CIBW_SOME_OPTION: value
@@ -34,7 +40,7 @@ jobs:
           CIBW_SKIP: cp36-* cp37-* *-musllinux_*
           CIBW_BUILD_FRONTEND: "build"
           CIBW_BEFORE_ALL_LINUX: yum install -y alsa-lib-devel
-
+         
       - uses: actions/upload-artifact@v4
         with:
           name: cibw-wheels-${{ matrix.os }}-${{ strategy.job-index }}
